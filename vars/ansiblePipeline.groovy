@@ -35,6 +35,19 @@ def call(Map config = [:]) {
                     echo "Approval enabled: ${envConfig.KEEP_APPROVAL_STAGE}"
                 }
             }
+
+            stage('Run Ansible Playbook') {
+                steps {
+                    echo "Executing Ansible playbook for ${envConfig.ENVIRONMENT}"
+
+                    sh """
+                    ansible-playbook \
+                    -i ${envConfig.CODE_BASE_PATH}/inventory \
+                    ${envConfig.CODE_BASE_PATH}/playbook.yml
+                    """
+                }
+            }
+
         }
     }
 }
