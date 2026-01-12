@@ -15,7 +15,8 @@ def call(Map config = [:]) {
 
             stage('Clone Repository') {
                 steps {
-                    echo "Cloning repository..."
+                    git url: 'https://github.com/shivamuniyal25/elasticsearch-automation.git',
+                    branch: 'main'
                 }
             }
 
