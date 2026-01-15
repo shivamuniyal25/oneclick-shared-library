@@ -47,7 +47,8 @@ def call(Map config = [:]) {
                     sh """
                     ansible-playbook \
                       -i ${envConfig.CODE_BASE_PATH}/inventory \
-                      ${envConfig.CODE_BASE_PATH}/playbook.yml
+                      ${envConfig.CODE_BASE_PATH}/playbook.yml \
+                      --ssh-common-args='-o StrictHostKeyChecking=no'
                     """
                 }
             }
