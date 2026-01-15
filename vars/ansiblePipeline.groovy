@@ -56,7 +56,7 @@ def call(Map config = [:]) {
             stage('Notification') {
                 steps {
                     slackSend(
-                        channel: "#${envConfig.SLACK_CHANNEL_NAME}",
+                        channel: "${envConfig.SLACK_CHANNEL_NAME}",
                         color: "good",
                         message: """
                         :white_check_mark: *Elasticsearch Deployment Successful*
