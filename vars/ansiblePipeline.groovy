@@ -64,7 +64,6 @@ def call(Map config = [:]) {
                         *Environment:* ${envConfig.ENVIRONMENT}
                         *Job:* ${env.JOB_NAME}
                         *Build Number:* ${env.BUILD_NUMBER}
-                        *Triggered By:* ${currentBuild.rawBuild.getCause(hudson.model.Cause$UserIdCause)?.userName ?: 'Jenkins'}
                         *Status:* SUCCESS
 
                         <${env.BUILD_URL}|View Build Logs>
