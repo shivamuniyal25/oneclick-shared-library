@@ -1,1 +1,1 @@
-Shared Lib for my Tool - Elasticsearch
+Shared Lib for Elasticsearch
